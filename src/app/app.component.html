@@ -1,0 +1,22 @@
+<table>
+<tr>
+  <td>Name</td>
+  <td>Duplicates</td>
+</tr>
+<tr
+  *ngFor="let trdata of tableData"
+  [ngStyle]="{
+    'background-color':
+      trdata.noOfTimesUsed > 0 && trdata.noOfTimesUsed < 3
+        ? 'red'
+        : trdata.noOfTimesUsed > 2 && trdata.noOfTimesUsed < 10
+        ? 'yellow'
+        : trdata.noOfTimesUsed > 10
+        ? 'green'
+        : 'transperent'
+  }"
+>
+  <td>{{ trdata.name }}</td>
+  <td>{{ trdata.noOfTimesUsed }}</td>
+</tr>
+</table>
